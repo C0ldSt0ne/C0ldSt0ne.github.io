@@ -6,30 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>菜狗的dvwa日记 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="菜狗的DVWA日记Command Injection（命令注入）命令注入（Command Injection），对一些函数的参数没有做过滤或过滤不严导致的，可以执行系统或者应用指令（CMD命令或者bash命令）的一种注入攻击手段。PHP命令注入攻击漏洞是PHP应用程序中常见的脚本漏洞之一。  输入一个网址 发现是对IP地址的ping功能 输入127.0.0.1&amp;&amp;net user">
+  <meta name="description" content="canary(FS)：栈溢出保护Canary是金丝雀的意思。技术上表示最先的测试的意思。这个来自以前挖煤的时候，矿工都会先把金丝雀放进矿洞，或者挖煤的时候一直带着金丝雀。金丝雀对甲烷和一氧化碳浓度比较敏感，会先报警。所以大家都用canary来搞最先的测试。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="菜狗的dvwa日记">
-<meta property="og:url" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="菜狗的DVWA日记Command Injection（命令注入）命令注入（Command Injection），对一些函数的参数没有做过滤或过滤不严导致的，可以执行系统或者应用指令（CMD命令或者bash命令）的一种注入攻击手段。PHP命令注入攻击漏洞是PHP应用程序中常见的脚本漏洞之一。  输入一个网址 发现是对IP地址的ping功能 输入127.0.0.1&amp;&amp;net user">
+<meta property="og:description" content="canary(FS)：栈溢出保护Canary是金丝雀的意思。技术上表示最先的测试的意思。这个来自以前挖煤的时候，矿工都会先把金丝雀放进矿洞，或者挖煤的时候一直带着金丝雀。金丝雀对甲烷和一氧化碳浓度比较敏感，会先报警。所以大家都用canary来搞最先的测试。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521200929336.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521201240378.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521201451476.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521201700561.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521201941645.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521202346232.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521202839515.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521203431192.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521203712275.png">
-<meta property="og:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521204131179.png">
-<meta property="article:published_time" content="2021-05-21T11:59:05.000Z">
-<meta property="article:modified_time" content="2021-05-21T12:53:18.622Z">
+<meta property="og:image" content="http://example.com/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018172618770.png">
+<meta property="og:image" content="http://example.com/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018184158925.png">
+<meta property="og:image" content="http://example.com/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018184317775.png">
+<meta property="og:image" content="http://example.com/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018190202062.png">
+<meta property="og:image" content="http://example.com/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018190320265.png">
+<meta property="article:published_time" content="2021-11-05T06:01:31.971Z">
+<meta property="article:modified_time" content="2021-11-05T06:02:56.300Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users/godti/AppData/Roaming/Typora/typora-user-images/image-20210521200929336.png">
+<meta name="twitter:image" content="http://example.com/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018172618770.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -165,55 +160,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-菜狗的dvwa日" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-菜狗の保护机制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      菜狗的dvwa日记
-    </h1>
-  
-
-        
-        <a href="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/" class="archive-article-date">
-  	<time datetime="2021-05-21T11:59:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-21</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="菜狗的DVWA日记"><a href="#菜狗的DVWA日记" class="headerlink" title="菜狗的DVWA日记"></a>菜狗的DVWA日记</h1><h2 id="Command-Injection（命令注入）"><a href="#Command-Injection（命令注入）" class="headerlink" title="Command Injection（命令注入）"></a>Command Injection（命令注入）</h2><p>命令注入（Command Injection），对一些函数的参数没有做过滤或过滤不严导致的，可以执行系统或者应用指令（CMD命令或者bash命令）的一种注入攻击手段。PHP命令注入攻击漏洞是PHP应用程序中常见的脚本漏洞之一。</p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521200929336.png" alt="image-20210521200929336"></p>
-<p>输入一个网址 发现是对IP地址的ping功能</p>
-<p>输入127.0.0.1&amp;&amp;net user  查看本机用户</p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521201240378.png" alt="image-20210521201240378"></p>
-<p>输入127.0.0.1&amp;dir </p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521201451476.png" alt="image-20210521201451476"></p>
-<h2 id="File-Inclusion-文件包含"><a href="#File-Inclusion-文件包含" class="headerlink" title="File Inclusion(文件包含)"></a>File Inclusion(文件包含)</h2><p>File  Inclusion，意思是文件包含（漏洞），是指当服务器开启allow_url_include选项时，就可以通过php的某些特性函数（include()，require()和include_once()，require_once()）利用url去动态包含文件，此时如果没有对文件来源进行严格审查，就会导致任意文件读取或者任意命令执行。</p>
-<p>点击file1.php 如下</p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521201700561.png" alt="image-20210521201700561"></p>
-<p>用burp对其抓包</p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521201941645.png" alt="image-20210521201941645"></p>
-<p>读取任意文件测试，我们在D盘新建一个txt构造下面命令：</p>
-<p>读取d盘下的wuhu.txt文件<a target="_blank" rel="noopener" href="http://192.168.123.129/vulnerabilities/fi/?page=D:%5Cwuhu.txt">http://192.168.123.129/vulnerabilities/fi/?page=D:\wuhu.txt</a></p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521202346232.png" alt="image-20210521202346232"></p>
-<h2 id="文件上传-File-Upload"><a href="#文件上传-File-Upload" class="headerlink" title="文件上传(File Upload)"></a>文件上传(File Upload)</h2><p>利用一句话木马拿到系统shell</p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521202839515.png" alt="image-20210521202839515"></p>
-<p>这里将一句话木马上传 更高难度需要抓包后改为png或jpeg格式上传</p>
-<p>用antsword连接即可 （本地搭的dvwa 我连我自己 有点离谱）</p>
-<h2 id="SQL-Injection"><a href="#SQL-Injection" class="headerlink" title="SQL Injection"></a>SQL Injection</h2><p>先抓包</p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521203431192.png" alt="image-20210521203431192"></p>
-<p>sqlmap走一走</p>
-<p>sqlmap.py -u “<a target="_blank" rel="noopener" href="http://127.0.0.1//DVWA-master/vulnerabilities/sqli/?id=1&amp;Submit=Submit&quot;">http://127.0.0.1//DVWA-master/vulnerabilities/sqli/?id=1&amp;Submit=Submit&quot;</a></p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521203712275.png" alt="image-20210521203712275"></p>
-<p>跳转到了登录页面</p>
-<p>所以 要在命令中加入cookie保存会话的在线在burp抓到的包里面 我们复制security=low; PHPSESSID=a4823pumpucp0kdlmte3s7uh64 放到sqlmap里即可 </p>
-<p>最终的命令为 sqlmap.py -u “<a target="_blank" rel="noopener" href="http://127.0.0.1//DVWA-master/vulnerabilities/sqli/?id=1&amp;Submit=Submit&quot;">http://127.0.0.1//DVWA-master/vulnerabilities/sqli/?id=1&amp;Submit=Submit&quot;</a> –cookie=”security=low; PHPSESSID=a4823pumpucp0kdlmte3s7uh64” –dbs</p>
-<p><img src="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/Users\godti\AppData\Roaming\Typora\typora-user-images\image-20210521204131179.png" alt="image-20210521204131179"></p>
-<p>成功爆出数据库</p>
+        <h1 id="canary-FS-：栈溢出保护"><a href="#canary-FS-：栈溢出保护" class="headerlink" title="canary(FS)：栈溢出保护"></a>canary(FS)：栈溢出保护</h1><p>Canary是金丝雀的意思。技术上表示最先的测试的意思。这个来自以前挖煤的时候，矿工都会先把金丝雀放进矿洞，或者挖煤的时候一直带着金丝雀。金丝雀对甲烷和一氧化碳浓度比较敏感，会先报警。所以大家都用canary来搞最先的测试。</p>
+<a id="more"></a>
+
+<p>stack canary表示栈的报警保护。在函数返回值之前添加的一串随机数（不超过机器字长），末位为/x00（提供了覆盖最后一字节输出泄露canary的可能），如果出现缓冲区溢出攻击，覆盖内容覆盖到canary处，就会改变原本该处的数值，当程序执行到此处时，会检查canary值是否跟开始的值一样，如果不一样，程序会崩溃，从而达到保护返回地址的目的。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>1、 在所有函数调用发生时，向栈帧内压入一个额外的随机 DWORD，这个随机数被称作<br>“canary”，用 IDA 反汇编时，又被称作“Security Cookie”。<br>2、 canary 位于 EBP 之前，系统还会在.data 的内存区域中存放一个 canary 的副本。<br>3、 当栈中发生溢出时，canary 将被首先淹没，之后才是 EBP 和返回地址。<br>4、 在函数返回之前，系统将执行一个额外的安全验证操作，称作 Security Check。 5、在 Security Check 过程中，系统将比较栈帧中原先存放的 canary 和.data 中副本的值，若两者不同，则说明栈中发生了溢出，系统将进入异常处理流程，函数不会正常返回。</p>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><p>1.查看源码</p>
+<p><img src="/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018172618770.png" alt="image-20211018172618770"></p>
+<p>2.编译，不开canary保护 去掉pie</p>
+<p>gcc -no-pie -fno-stack-protector  -o test test.c    <strong>关闭堆栈保护</strong></p>
+<p>3.分析</p>
+<p>gcc -no-pie -fstack-protector-all  -o test1 test.c    <strong>启用堆栈保护，为所有函数插入保护代码</strong></p>
+<p>-fstack-protector  <strong>启用堆栈保护，不过只为局部变量中含有 char 数组的函数插入保护代码</strong></p>
+<p>加入保护后如下</p>
+<p><img src="/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018184158925.png" alt="image-20211018184158925"></p>
+<p>动态调试分析canary</p>
+<p>把gs寄存器中canary的值放在eax寄存器中</p>
+<p><img src="/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018184317775.png" alt="image-20211018184317775"></p>
+<p>把canary的值放到ebp-0xC</p>
+<p><img src="/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018190202062.png" alt="image-20211018190202062"></p>
+<p>xor 异或 比较两个的值 若相等 继续跳转</p>
+<p>若修改了canary的值 跳转到</p>
+<p><img src="/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/image-20211018190320265.png" alt="image-20211018190320265"></p>
+<p>如果 Canary 已经被非法修改，此时程序流程会走到 __stack_chk_fail。__stack_chk_fail 也是位于 glibc 中的函数，默认情况下经过 ELF 的延迟绑定，定义如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">eglibc-2.19&#x2F;debug&#x2F;stack_chk_fail.c</span><br><span class="line"></span><br><span class="line">void __attribute__ ((noreturn)) __stack_chk_fail (void)</span><br><span class="line">&#123;</span><br><span class="line">  __fortify_fail (&quot;stack smashing detected&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void __attribute__ ((noreturn)) internal_function __fortify_fail (const char *msg)</span><br><span class="line">&#123;</span><br><span class="line">  &#x2F;* The loop is added only to keep gcc happy.  *&#x2F;</span><br><span class="line">  while (1)</span><br><span class="line">    __libc_message (2, &quot;*** %s ***: %s terminated\n&quot;,</span><br><span class="line">                    msg, __libc_argv[0] ?: &quot;&lt;unknown&gt;&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Canary-的绕过技术"><a href="#Canary-的绕过技术" class="headerlink" title="Canary 的绕过技术"></a>Canary 的绕过技术</h2><h3 id="1-泄露栈中的-Canary"><a href="#1-泄露栈中的-Canary" class="headerlink" title="1.泄露栈中的 Canary"></a>1.泄露栈中的 Canary</h3><p>Canary 设计为以字节 \x00 结尾，本意是为了保证 Canary 可以截断字符串。 泄露栈中的 Canary 的思路是覆盖 Canary 的低字节，来打印出剩余的 Canary 部分。 这种利用方式需要存在合适的输出函数，并且可能需要第一溢出泄露 Canary，之后再次溢出控制执行流程。<br>也可以和格式化字符串漏洞结合，获得Canary 的值。<br>需要ASLR没开启。</p>
+<h3 id="2-爆破-Canary"><a href="#2-爆破-Canary" class="headerlink" title="2.爆破 Canary"></a>2.爆破 Canary</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">print &quot;[+] Brute forcing stack canary &quot;</span><br><span class="line"></span><br><span class="line">start &#x3D; len(p)</span><br><span class="line">stop &#x3D; len(p)+8</span><br><span class="line"></span><br><span class="line">while len(p) &lt; stop:</span><br><span class="line">   for i in xrange(0,256):</span><br><span class="line">      res &#x3D; send2server(p + chr(i))</span><br><span class="line"></span><br><span class="line">      if res !&#x3D; &quot;&quot;:</span><br><span class="line">         p &#x3D; p + chr(i)</span><br><span class="line">         #print &quot;\t[+] Byte found 0x%02x&quot; % i</span><br><span class="line">         break</span><br><span class="line">     </span><br><span class="line">      if i &#x3D;&#x3D; 255:</span><br><span class="line">         print &quot;[-] Exploit failed&quot;</span><br><span class="line">         sys.exit(-1)</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">canary &#x3D; p[stop:start-1:-1].encode(&quot;hex&quot;)</span><br><span class="line">print &quot;   [+] SSP value is 0x%s&quot; % canary</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-劫持-stack-chk-fail-函数"><a href="#3-劫持-stack-chk-fail-函数" class="headerlink" title="3.劫持__stack_chk_fail 函数"></a>3.劫持__stack_chk_fail 函数</h3><p>已知 Canary 失败的处理逻辑会进入到 __stack_chk_failed 函数，__stack_chk_failed 函数是一个普通的延迟绑定函数，可以通过修改 GOT 表劫持这个函数。</p>
+<h3 id="4-覆盖-TLS-中储存的-Canary-值"><a href="#4-覆盖-TLS-中储存的-Canary-值" class="headerlink" title="4.覆盖 TLS 中储存的 Canary 值"></a>4.覆盖 TLS 中储存的 Canary 值</h3><p>已知 Canary 储存在 TLS 中，在函数返回前会使用这个值进行对比。当溢出尺寸较大时，可以同时覆盖栈上储存的 Canary 和 TLS 储存的 Canary 实现绕过。</p>
+<h3 id="bugku-canary"><a href="#bugku-canary" class="headerlink" title="bugku canary"></a>bugku canary</h3><p>源码很简单，有两次read栈溢出，但是需要绕过Canary</p>
+<p>绕过方式就是，在第一个read处输入到覆盖canary末尾的\x00，后面的print会之间把canary输出来</p>
+<p>注：canary的特性，通过末尾的\x00来截断参数，当\x00被覆盖后，canary也就变成了print参数的一部分。</p>
 
       
 
@@ -293,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dvwa%E6%97%A5/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/11/05/%E8%8F%9C%E7%8B%97%E3%81%AE%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +290,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dwva%E6%97%A5%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          菜狗的dwva日记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/05/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">搭建博客过程</div>
+    <a href="/2021/05/21/%E8%8F%9C%E7%8B%97%E7%9A%84dwva%E6%97%A5%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">菜狗的dwva日记</div>
       <i class="icon-circle-right"></i>
     </a>
   
